@@ -1,0 +1,26 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+    <style>
+        .j {
+         color: rgb(239, 255, 17); /* Цвет текста */
+        }
+       </style>
+
+
+    <div class="container"> 
+        <div class="row"> 
+            <h1 class = "j">Profile of {{comment.author.profile.username}}</h1>
+            <a class="waves-effect" href="/profile"><img class="center-align responsive-img" src ='/{{comment.author.profile.avatar}}'>
+            <h1>{{comment.author.profile.about}}</h1>
+        </div>
+        <div class = "row" >
+            <form action = "/profile/" method = "POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ profile_form.as_p }}
+                {{ user_form.as_p }}
+            </form>
+        </div>
+    </div>
+{% endblock %}
