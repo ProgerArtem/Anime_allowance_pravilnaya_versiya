@@ -4,4 +4,7 @@
     z-index: 1;
     top: 100px;
     left: 0;
+    float:left;
+    overflow-y: auto;
 }
+.bl-scroll {    width: 280px;    max-height: 400px; /*Высота блока после которой начнется прокрутка*/    display: inline-block;    overflow-x: hidden; /*непосредственно прокрутка*/    margin: 0 -3px;    padding-top: 1px;}

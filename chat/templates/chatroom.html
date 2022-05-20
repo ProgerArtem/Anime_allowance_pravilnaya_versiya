@@ -5,8 +5,23 @@
 <div class="row">
     
     <div class="col s4 m2 l2 sidenav-fixed">
-        {% for user_ in users %}
         <div class="row valign-wrapper">
+        <div></div>
+        <form class="" id="search_user" method=POST action="{% url 'search_user' %}">
+            {% csrf_token %}
+            <input type="search" name="searchuser"
+            placeholder="Шукати користувача">
+        </form>
+        <button class="btn waves-effect waves-light"
+        form="search_user"
+        type="submit" >search</button>
+        </div>
+        {% for user_ in users %}
+        {% if user_ == other_user %}
+        <div class="row valign-wrapper yellow lighten-4">
+            {% else %}
+            <div class="row valign-wrapper  lighten-4">
+                {% endif %}
             <div class="col s4">
                 <a href="/chat/{{user_.pk}}"><img src="/{{user_.profile.avatar}}" alt="" class="circle responsive-img">
                 </a>
@@ -155,7 +170,7 @@
         div.scrollIntoView();
     } 
     message_send_btd.addEventListener('click', send_message);  
-    document.addEventListener('keypress', (e) => {
+    message_input.addEventListener('keypress', (e) => {
         if (e.key === "Enter"){
             send_message();
         }
