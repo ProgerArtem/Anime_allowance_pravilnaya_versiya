@@ -142,14 +142,20 @@ def like_post(request, pk):
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
     else:
-        post.likes.add(request.user)
+        if post.dislikes.filter(id=request.user.id).exists():
+            post.dislikes.remove(request.user)
+        else:
+           post.likes.add(request.user)
     return redirect(f'/{post.post_slug}/#like_form')
 def dislikes_post(request, pk):
     post = Post.objects.get(id=request.POST['post_id'])
     if post.dislikes.filter(id=request.user.id).exists():
         post.dislikes.remove(request.user)
     else:
-        post.dislikes.add(request.user)
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.dislikes.add(request.user)
     return redirect(f'/{post.post_slug}#dislike_form')
 def single_slug(request, single_slug):
     sidebar = PostCategory.objects.all()
