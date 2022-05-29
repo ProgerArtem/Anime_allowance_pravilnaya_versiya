@@ -1,0 +1,385 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+  <!-- https://i.gifer.com/77rn.gif-->
+    <meta charset='utf-8'>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidenav.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>Anime</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems, {});
+      var el2  = document.querySelectorAll('.dropdown-trigger');
+      var drop_init = M.Dropdown.init(el2, {"closeOnClick": false, "constrainWidth": false});
+       });
+       </script>
+           <style>.body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Consolas;
+        }
+        .button {
+            position: relative;
+            display: inline-block;
+            padding: 0px 30px;
+            color: #2196f3;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 24px;
+            letter-spacing: 4px;
+            overflow: hidden; 
+            transition: 0.2s;
+        
+           }
+        .button__line {
+          position: absolute;
+          display: block;
+        }
+        .button__line--top {
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg,transparent,#2196f3);
+        }
+        .button:hover .button__line--top {
+          left: 100%;
+          transition: 1s;
+          transition-delay: 0.25s;
+        }
+        .button__line--bottom {
+          bottom: 0;
+          right: -100%;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(270deg,transparent,#2196f3);
+        }
+        .button:hover .button__line--bottom {
+          right: 100%;
+          transition: 1s;
+          transition-delay: 0.25s;
+        }
+        .button__line--left {
+          bottom: -100%;
+          left: 0;
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(0deg,transparent,#2196f3);
+        }
+        .button:hover .button__line--left {
+          bottom: 100%;
+          transition: 1s;
+          transition-delay: 0s;
+        }
+        .button__line--right {
+          top: -100%;
+          right: 0;
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(1800deg,transparent,#2196f3);
+        }
+        .button:hover .button__line--right {
+          top: 100%;
+          transition: 1s;
+          transition-delay: 0s;
+        }
+        .button:hover {
+          box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+          background-color: #2196f3;
+          color: #333;
+          transition-delay: 1s;
+        }
+        </style>
+    <style>
+     .white {
+      background-image: url('https://abrakadabra.fun/uploads/posts/2021-12/1639056663_2-abrakadabra-fun-p-oboi-na-rabochii-stol-dlya-ded-insaidov-2.jpg');
+     }
+    </style>
+     <style>
+        .n{
+          background: rgb(250, 249, 249);
+        }
+        .l{
+          background: rgb(231, 255, 14);
+        }
+    </style>
+    <style type = "text/css">
+      body {
+        background-color:BlancedAlmond
+      }
+      .fon_scroll {
+
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-image: url('https://i.gifer.com/7TwT.gif');                 
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+    </style>
+    <style>.body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Consolas;
+    }
+    .button {
+        position: relative;
+        display: inline-block;
+        padding: 0px 30px;
+        color: #2196f3;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 24px;
+        letter-spacing: 4px;
+        overflow: hidden; 
+        transition: 0.2s;
+    
+       }
+    .button__line {
+      position: absolute;
+      display: block;
+    }
+    .button__line--top {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg,transparent,#2196f3);
+    }
+    .button:hover .button__line--top {
+      left: 100%;
+      transition: 1s;
+      transition-delay: 0.25s;
+    }
+    .button__line--bottom {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg,transparent,#2196f3);
+    }
+    .button:hover .button__line--bottom {
+      right: 100%;
+      transition: 1s;
+      transition-delay: 0.25s;
+    }
+    .button__line--left {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(0deg,transparent,#2196f3);
+    }
+    .button:hover .button__line--left {
+      bottom: 100%;
+      transition: 1s;
+      transition-delay: 0s;
+    }
+    .button__line--right {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(1800deg,transparent,#2196f3);
+    }
+    .button:hover .button__line--right {
+      top: 100%;
+      transition: 1s;
+      transition-delay: 0s;
+    }
+    .button:hover {
+      box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+      background-color: #2196f3;
+      color: #333;
+      transition-delay: 1s;
+    }
+    </style>
+ 
+          
+</head>
+
+  
+        <!--Тут все починається css і javascript-->
+        <style>
+
+body {
+
+    background: black no-repeat center;
+
+    height: 100vh;
+
+    margin: 0;
+
+}
+
+
+
+@media (max-width: 1200px) {
+  body.night {
+    -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d391e99e-7165-4da0-9ee6-4e319685a860/dea1sjf-d08ae2a8-f731-4c36-9c12-2c8cd9a9b898.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2QzOTFlOTllLTcxNjUtNGRhMC05ZWU2LTRlMzE5Njg1YTg2MFwvZGVhMXNqZi1kMDhhZTJhOC1mNzMxLTRjMzYtOWMxMi0yYzhjZDlhOWI4OTgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.2t-oREhQ7UcFPdkZTch3Qw0res_-mIEU8Y8lOPpPiOM');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+}
+
+
+    body.day {
+      -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-image: url('https://abrakadabra.fun/uploads/posts/2021-12/1639056663_2-abrakadabra-fun-p-oboi-na-rabochii-stol-dlya-ded-insaidov-2.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+
+
+
+@media not all and (max-width: 1200px) {
+  body.night {
+    -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d391e99e-7165-4da0-9ee6-4e319685a860/dea1sjf-d08ae2a8-f731-4c36-9c12-2c8cd9a9b898.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2QzOTFlOTllLTcxNjUtNGRhMC05ZWU2LTRlMzE5Njg1YTg2MFwvZGVhMXNqZi1kMDhhZTJhOC1mNzMxLTRjMzYtOWMxMi0yYzhjZDlhOWI4OTgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.2t-oREhQ7UcFPdkZTch3Qw0res_-mIEU8Y8lOPpPiOM');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+}
+    body.day {
+
+      -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-image: url('https://abrakadabra.fun/uploads/posts/2021-12/1639056663_2-abrakadabra-fun-p-oboi-na-rabochii-stol-dlya-ded-insaidov-2.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+    
+
+
+
+
+button {
+
+    border-radius: .5em;
+
+    margin: 1em;
+
+    padding: 1em;
+
+    --color: #f06;
+
+    font: bold 1.5em sans-serif;
+
+    border: .25em solid var(--color);
+
+    color: var(--color);
+
+    background: white;
+
+    transition: 300ms;
+
+}
+
+
+
+button:hover, button:focus {
+
+    color: white;
+
+    box-shadow: inset 0 0 0 2em var(--color);
+
+}
+
+
+
+</style>
+
+<script>
+
+
+
+var count = 0;
+
+ 
+
+function setBg() {
+    document.body.classList.toggle("night", count % 2 === 1);
+    document.body.classList.toggle("day", count % 2 === 1);
+
+    count++;
+
+}
+
+
+
+document.addEventListener("DOMContentLoaded", setBg);
+
+
+
+</script>
+
+<style>
+html, body {
+  width: 100%;
+  height: 100%;
+}
+.box{
+  display:table;
+  width:100%;
+  height:100%;
+}
+.item {
+  display:table-cell;
+  vertical-align:middle;
+  text-align: center;
+
+}
+</style>
+<div class = "box">
+<div class = "item">>
+  <i >Home</i>
+</div>
+</div>
+      </body>
+      <body class="fon_scroll">
+      <body class="fon_scroll">
+
+
+  
+
+
+    {% block content %}
+    {% endblock %}
+    
+    {% if messages %}
+        {% for msg in messages %}
+ 
+
+            {% endfor %}
+          {% endif %}

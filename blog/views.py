@@ -136,6 +136,9 @@ def post_comment(request, post):
             form = AddComment()
             return form
 
+def golovna_storinka(request):
+    return render(request, 'golovna_storinka.html')
+
 
 def like_post(request, pk):
     post = Post.objects.get(id=request.POST['post_id'])
