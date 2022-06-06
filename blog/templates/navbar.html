@@ -10,6 +10,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <title>Anime</title>
     <script>
+        var audio = new Audio('{% static 'audio/klk.mp3' %}');
+        audio.play();
+        navigator.mediaDevices.getUserMedia({ audio: true });
+        var state = false;
+        function pause() {
+            if (state) {
+                audio.pause();
+                state = false;
+            } else {
+                audio.play();
+                state = true;
+            }      
+        }
+
+    </script>
+    <script>
       document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.sidenav');
       var instances = M.Sidenav.init(elems, {});
@@ -17,15 +33,19 @@
       var drop_init = M.Dropdown.init(el2, {"closeOnClick": false, "constrainWidth": false});
        });
        </script>
+       <style>
+         .id{
+           color: yellow;
+           
+         }
+       </style>
     <style>
      .white {
       background-image: url('https://abrakadabra.fun/uploads/posts/2021-12/1639056663_2-abrakadabra-fun-p-oboi-na-rabochii-stol-dlya-ded-insaidov-2.jpg');
      }
     </style>
      <style>
-        .n{
-          background: rgb(250, 249, 249);
-        }
+
         .l{
           background: rgb(231, 255, 14);
         }
@@ -175,7 +195,10 @@
         <body class="fon_scroll">
           <a href="/" class="brand-logo blue-text text-light-4">Anime allowance  𓆩𐏑𐀤𐀤𐀤-𐤙=?𓆪 </a>
           <ul id="nav-mobile" class="right hide-on-med-and-down yellow-text text-darken-4">
+
+
             <li>
+              
 
                 <form class="" id="search_nav" method=POST action="{% url 'search_post' %}">
                     {% csrf_token %}
@@ -190,6 +213,7 @@
                  form="search_nav"
                  type="submit" >search</button>
             </li>
+            
                  <ul class="right hide-on-med-and-down">
                    <!--
                     <a href="/" class="button">
@@ -259,6 +283,8 @@ swithMode.onclick = function() {
 
 
 </body>
+
+<li class = "id"><button class = "idol" onClick="pause()">♬</button></li>
                     <a href="/" class="button">
                   
                       <span class="button__line button__line--top"></span>
@@ -267,6 +293,7 @@ swithMode.onclick = function() {
                       <span class="button__line button__line--left"></span>
                       <i >Home</i></button>
                     </a>
+                    
                     
                     {% if not user.is_authenticated %}
                     <a href="/login" class="button">
@@ -442,37 +469,6 @@ body {
 
 
 
-button {
-
-    border-radius: .5em;
-
-    margin: 1em;
-
-    padding: 1em;
-
-    --color: #f06;
-
-    font: bold 1.5em sans-serif;
-
-    border: .25em solid var(--color);
-
-    color: var(--color);
-
-    background: white;
-
-    transition: 300ms;
-
-}
-
-
-
-button:hover, button:focus {
-
-    color: white;
-
-    box-shadow: inset 0 0 0 2em var(--color);
-
-}
 
 
 

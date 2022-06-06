@@ -3,8 +3,17 @@
 {% block content %}
 
 <div class="row">
+    <style>
+        .solid {
+      border-style: solid;
+
+      border: 1px solid rgb(204, 202, 202);
+padding: 0 60px 0 0;
+
+    }
+    </style>
     
-    <div class="col s4 m2 l2 sidenav-fixed">
+    <div class="col s4 m2 l2 sidenav-fixed solid">
         <div class="row valign-wrapper">
         <div></div>
         <form class="" id="search_user" method=POST action="{% url 'search_user' %}">
@@ -59,9 +68,9 @@
             {% for message in user_messages %}
             <div class="col s12 m12 l12">
                 <div class="card-panel {% if request.user == message.sender %} left teal lighten-2{% else %} right red lighten-2{%endif%}">
-                    <div class="card-content">
-                        <span class="card-title">{{message.sender.username}}</span>
-                        <p>{{message.message}}</p>
+                    <div class="card-content ">
+                        <span class="card-title ">{{message.sender.username}}</span>
+                        <p > {{message.message}}</p>
                         <p>{{message.date_created}}</p>
                     </div>
                 </div>   

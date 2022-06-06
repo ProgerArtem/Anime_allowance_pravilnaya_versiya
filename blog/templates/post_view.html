@@ -25,13 +25,13 @@
         <div class = "row">
             <div class = "col s12 m10 l15">
                 
-                <div class="panel blue n yellow-text ">
+                <div class="panel yellow n blue-text ">
                     <span text-align="" display="block">
                         <IMG class="center-align responsive-img" src ='/{{ post.img }}'>
                     </span>
                     <h3 class="center-align">{{post.title}}</h3>
                     <p class ="center-align flow-text"> 
-                        <span class="yellow-text">
+                        <span class="blue-text">
                         {{post.text}}
                         </span>
                     </p>
@@ -61,7 +61,7 @@
 
 
         </div>
-    <div class="panel white n">
+    <div class="panel blue-grey n">
         <div class = "row">
             <form method="POST">
                 {% csrf_token %}

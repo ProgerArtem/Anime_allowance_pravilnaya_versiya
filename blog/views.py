@@ -1,6 +1,7 @@
 # -*- codding: utf-8 -*-
 import re
 import time
+from unicodedata import category
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -8,6 +9,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from django.views.defaults import page_not_found
 from django.http import Http404
+from requests import post
 from .models import Post, PostCategory, Comment, Profile
 from .forms import AddPostForm, AddComment, UpdateProfileForm, UpdateUserForm, RegisterForm #, AuthenticationForm
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
@@ -16,7 +18,17 @@ from chat.views import  unread_msg_num
 # Create your views here.
 def paginate(request, posts):
     page = request.GET.get('page')
-    paginator = Paginator(posts, 2)
+    paginator = Paginator(posts, 6)
+    try:
+        posts_page = paginator.page(page)
+    except PageNotAnInteger:
+        posts_page = paginator.page(1)
+    except EmptyPage:
+        posts_page = paginator.page(paginator.num_pages)
+    return posts_page
+def paginate(request, posts):
+    page = request.GET.get('page')
+    paginator = Paginator(posts, 6)
     try:
         posts_page = paginator.page(page)
     except PageNotAnInteger:
@@ -38,7 +50,7 @@ def main_page(request):
         'sidebar': categories,
         'msg_num': msg_num
     }
-    return render(request, 'main_page.html', context)
+    return render(request, 'category.html', context)
 def index(request):
     return render(request, 'index.html')
 
@@ -165,7 +177,8 @@ def single_slug(request, single_slug):
     categories = [cat.category_slug  for cat in PostCategory.objects.all()]
     if single_slug in categories:
         category_posts = Post.objects.filter(post_category__category_slug=single_slug)
-        return render(request, 'category.html', {'posts':category_posts,
+        posts = paginate(request, list(category_posts))
+        return render(request, 'category.html', {'posts': posts,
                       'sidebar': sidebar})
     posts_slug = [ p.post_slug for p in Post.objects.all()]
     if single_slug in posts_slug:
