@@ -10,7 +10,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <title>Anime</title>
     <script>
-        var audio = new Audio('{% static 'audio/klk.mp3' %}');
+      
+        var audio = new Audio('{% static 'audio/Escanor.mp3' %}');
+        let range = new Range();
         audio.play();
         navigator.mediaDevices.getUserMedia({ audio: true });
         var state = false;
@@ -23,7 +25,7 @@
                 state = true;
             }      
         }
-
+        
     </script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -38,6 +40,12 @@
            color: yellow;
            
          }
+         
+  .n:hover{
+  box-shadow: 0px 0px 20px rgb(56, 1, 255)  ;
+  }
+
+</style> 
        </style>
     <style>
      .white {
@@ -49,7 +57,13 @@
         .l{
           background: rgb(231, 255, 14);
         }
+
     </style>
+    <style>
+      .k{
+        background-color: rgb(135, 123, 213);
+      }
+      </style>
     <style type = "text/css">
       body {
         background-color:BlancedAlmond
@@ -147,7 +161,11 @@
       transition-delay: 1s;
     }
     </style>
- 
+ <style>
+  .placeholder {
+    color : black
+  }
+ </style>
           
 </head>
 <body >
@@ -177,7 +195,7 @@
       <!--<li><a onclick="setBg();" class = "yellow-text">Change wallpaper</a></li>-->
       <li><a class = "yellow-text" href="https://pro-prof.com/forums/topic/asm_i8086_5"> Hello World</a></li>
       <!--<li><a class = "yellow-text " href="/chat/4">Chatroom</a></li>-->
-      <li><a href="/chat" class="collection-item yellow-text"><span class="new badge">{{msg_num}}</span>Chatroom</a></li>
+      <li><a href="/chat" class="collection-item yellow-text "><span class="new badge ">{{msg_num}}</span>Chatroom</a></li>
       <li><a class = "yellow-text" href="/profile/">Edit profile</a></li>
 
       <li><div class="divider"></div></li>
@@ -202,16 +220,18 @@
 
                 <form class="" id="search_nav" method=POST action="{% url 'search_post' %}">
                     {% csrf_token %}
-                    <input type="search" name="searchpost"
-                    placeholder="Search for an article">
+                    <input class = "u" type="search" name="searchpost "
+                    
+                    placeholder="Search for an article " >
                 </form>
             </li>
             <li>
     
               <li>
-                <button class="btn waves-effect waves-light"
+                <button class="btn waves-effect waves-light "
                  form="search_nav"
-                 type="submit" >search</button>
+
+                 type="submit " >search</button>
             </li>
             
                  <ul class="right hide-on-med-and-down">
@@ -283,8 +303,9 @@ swithMode.onclick = function() {
 
 
 </body>
-
-<li class = "id"><button class = "idol" onClick="pause()">♬</button></li>
+<!--
+ <li class = "id"><button class = "idol" onClick="pause()">♬</button></li>
+-->
                     <a href="/" class="button">
                   
                       <span class="button__line button__line--top"></span>
@@ -401,6 +422,10 @@ swithMode.onclick = function() {
         </div>
         <!--Тут все починається css і javascript-->
         <style>
+                  .btn {
+    
+    background-color:rgb(106, 27, 166)
+}
 
 body {
 

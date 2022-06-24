@@ -6,8 +6,26 @@
     .aligncenter {
         text-align: center;
     }
+    .container-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.x{
+    color:blanchedalmond
+}
+.p{
+    color:yellow
+}
+.btn {
+    
+    background-color:black
+}
     </style>
       <style>
+                  .btn {
+    
+    background-color:rgb(106, 27, 166)
+}
         .j {
          color: rgb(239, 255, 17); /* Цвет текста */
         }
@@ -41,28 +59,28 @@
         </div>
          
         {% if user.is_authenticated %}
-        <div class="row">
+        <div class="row container-buttons">
             <form  action="{% url 'like_post' post.id %}" id="like_form" method="POST">
                 {% csrf_token %}
-                <button type="submit", class="btn" value = '{{post.id}}' name ="post_id">
-                <i class="medium material-icons">thumb_up</i>
+                <button type="submit", class="btn n" value = '{{post.id}}' name ="post_id">
+                <i class="medium material-icons p">thumb_up</i>
             </button>
             </form>
-            <strong>{{ likes_num }} Like{{ likes_num|pluralize }}</strong>
+            <strong class = "x">{{ likes_num }} Like{{ likes_num|pluralize }}</strong>
             
-            <form action="{% url 'dislike_post' post.id %}" id="dislike_form" method="POST">
+            <form action="{% url 'dislike_post' post.id %}" id="dislike_form" method="POST" >
                 {% csrf_token %}
-            <button type="submit", class="btn" value = '{{post.id}}' name ="post_id">
-                <i class="medium material-icons">thumb_down</i>
+            <button type="submit", class="btn n " value = '{{post.id}}' name ="post_id">
+                <i class="medium material-icons p">thumb_down</i>
             </button>
             </form>
             
-            <strong>{{ dislikes_num }} Dislike{{ dislikes_num|pluralize }}</strong>
+            <strong class = "x">{{ dislikes_num }} Dislike{{ dislikes_num|pluralize }}</strong>
 
 
         </div>
     <div class="panel blue-grey n">
-        <div class = "row">
+        <div class = "row ">
             <form method="POST">
                 {% csrf_token %}
                 {{ comment_form.as_p }}
